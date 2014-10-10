@@ -1,4 +1,13 @@
 <div id='container'>
   <!-- Your html here -->
+  <div ng-repeat="link in data.links">
+
+    <h2>{{link.title}}</h2>
+    {{link.url}}
+    <br />
+    <i>{{link.base_url}}/{{link.code}}</i>
+    <br />
+    Visits: {{link.visits}}
+  </div>
 
 </div>
