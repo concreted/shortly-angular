@@ -1,7 +1,18 @@
 <div id='signin'>
   <h1>signin</h1>
-  <form name="signinForm" ng-submit='signin()'>
-    <input type='text'ng-model='user.username'>
+  <form name="signinForm" ng-submit='signin()' novalidate>
+    <!-- <input type='text' ng-model='user.username' ng-class="{'error': user.username.$pristine'}" ng-minlength="3" ng-maxlength="10" required> -->
+    <input
+      type = "text"
+      name = "username"
+      ng-model="user.username"
+      ng-minlength="3"
+      ng-maxlength="10"
+      ng-class="{'error': signinForm.username.$invalid && !signinForm.username.$pristine}"
+      required
+      />
+    <p ng-show="signinForm.username.$invalid && !signinForm.username.$pristine">You name is required.</p>
+
     <input type="password" ng-model='user.password'>
     <button>signin</button>
   </form>
