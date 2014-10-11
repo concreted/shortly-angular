@@ -13,8 +13,17 @@
       />
     <p ng-show="signinForm.username.$invalid && !signinForm.username.$pristine">You name is required.</p>
 
-    <input type="password" ng-model='user.password'>
-    <button>signin</button>
+    <input
+      type="password"
+      name="password"
+      ng-model="user.password"
+      ng-minlength="1"
+      ng-class="{'error': signinForm.password.$invalid && !signinForm.password.$pristine}"
+      required
+    />
+    <p ng-show="signinForm.password.$invalid && !signinForm.password.$pristine">You password is required.</p>
+
+    <button ng-disabled="signinForm.$invalid">signin</button>
   </form>
   <a href="#/signup">Don't have an account? <strong>Signup</strong> ...</a>
 </div>
