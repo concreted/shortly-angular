@@ -11,5 +11,12 @@ angular.module('shortly.links', [])
     });
   };
   $scope.getLinks();
+})
+.directive('shortlylink', function(){
+  return {
+    restrict: 'E',
+    templateUrl: 'app/links/link.html',
+  };
 });
+
 
